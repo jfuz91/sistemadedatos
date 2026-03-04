@@ -1,6 +1,7 @@
 from src.database import users
+from src.dashboard import dashboard
 
-def login():
+def iniciarsesion():
     print("bienvenido al sistema de notas - Iniciar sesión")
     email_stored= input("Ingresa tú correo electronico: ")
     password_stored= input("Ingresa tú contraseña: ")
@@ -13,7 +14,8 @@ def login():
     
     if user_match:
         print(f"Estas logueado {user_match['name']}")
-        return user_match
+        dashboard(user_match)
+        
     else:
         print ("Usuario o contraseña incorrectos")
         input("Presiona enter para volver al menú")
